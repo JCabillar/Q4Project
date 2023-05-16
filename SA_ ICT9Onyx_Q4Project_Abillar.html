@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>Q4 | PROJECT</title>
+</head>
+<div class="container" style="font-size:2em;">
+<body style="background-color: black;">
+	<center><<font color="white"><h1>Unit Converters</h1></font></center>
+	<br>
+	<center><font color="white"><h1>LENGTH</h1></font></center>
+
+ <center><font color="white"><h2>Meters-Centimeters-Kilometers</h2>
+  <form>
+   Meters: <font color="black"><input type="text" id="metersInput"></font><br><br>
+    <font color="black"><input type="button" value="Convert" onclick="convertMeters()"></font>
+    <br><br>
+    <p id="centimetersResult"></p>
+    <p id="kilometersResult"></p>
+  </form></font></center>
+
+  <script>
+    function convertMeters() {
+      var meters = document.getElementById("metersInput").value;
+      var centimeters = meters * 100;
+      var kilometers = meters / 1000;
+      document.getElementById("centimetersResult").innerHTML = meters + " meters is equal to " + centimeters + " centimeters.";
+      document.getElementById("kilometersResult").innerHTML = meters + " meters is equal to " + kilometers + " kilometers.";    
+    }
+  </script>
+<br>
+<center><font color="white"><h1>TIME</h1></center>
+<center><h2>Seconds-Minutes-Hours</h2>
+ Seconds: <font color="black"><input type="text" id="seconds_input"></font>
+ <br><br>
+ <font color="black"><button onclick="convert()">Convert</button></font>
+ <br><br>
+ <p id="result"></p></font></center>
+
+ <script>
+  function convert() {
+   var seconds = document.getElementById("seconds_input").value;
+   var minutes = Math.floor(seconds / 60);
+   var hours = Math.floor(minutes / 60);
+   minutes = minutes % 60;
+   seconds = seconds % 60;
+   document.getElementById("result").innerHTML = hours + " hours " + minutes + " minutes " + seconds + " seconds";
+  }
+ </script>
